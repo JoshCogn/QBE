@@ -223,6 +223,14 @@ public class VehicleQuotePage extends BasePage {
 		dropdown.click();
 		dropdown.findElement(By.xpath("//*[text()='" + colour + "']")).click();		
 	}
+
+	public void setEmailAddress(String email) {
+		driver.findElement(By.id("vehicleForm_tellUsABitMore_yourEmailAddress")).sendKeys(email);
+	}
+
+	public void setPromoCode(String code) {
+		driver.findElement(By.id("vehicleForm_tellUsABitMore_promotionalCode")).sendKeys(code);
+	}
 	
 	
 

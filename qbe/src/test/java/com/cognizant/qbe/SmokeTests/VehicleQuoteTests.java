@@ -97,10 +97,8 @@ public class VehicleQuoteTests extends BaseTest {
 		
 		vehicleQuotePage.setCarColour("Green");
 		
-		
-		
-		
-		
+		vehicleQuotePage.setEmailAddress("email@address.com");
+		vehicleQuotePage.setPromoCode("ABC123");
 		
 		
 	}
