@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="22119" started-at="2018-07-20T01:08:24Z" finished-at="2018-07-20T01:08:46Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="22119" started-at="2018-07-20T01:08:24Z" finished-at="2018-07-20T01:08:46Z">
+      <class name="com.cognizant.qbe.SmokeTests.VehicleQuoteTests">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.cognizant.qbe.SmokeTests.VehicleQuoteTests@735b5592]" name="beforeMethod" is-config="true" duration-ms="9249" started-at="2018-07-20T11:08:24Z" finished-at="2018-07-20T11:08:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="fill_in_form()[pri:0, instance:com.cognizant.qbe.SmokeTests.VehicleQuoteTests@735b5592]" name="fill_in_form" duration-ms="12853" started-at="2018-07-20T11:08:33Z" finished-at="2018-07-20T11:08:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fill_in_form -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.cognizant.qbe.SmokeTests.VehicleQuoteTests@735b5592]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-20T11:08:46Z" finished-at="2018-07-20T11:08:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.cognizant.qbe.SmokeTests.VehicleQuoteTests -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.cognizant.qbe.SmokeTests.VehicleQuoteTests">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="fill_in_form"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- com.cognizant.qbe.SmokeTests.VehicleQuoteTests -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
