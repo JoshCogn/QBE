@@ -23,7 +23,7 @@ public class VehicleQuoteTests extends BaseTest {
 		
 		//Thread.sleep(1000);
 		
-		/*
+		
 		vehicleQuotePage.setHowToSearchForCar("Use registration number");
 		vehicleQuotePage.setRegistrationNumberState("NSW");
 		vehicleQuotePage.setRegistrationNumber("ABC123187321637");
@@ -33,7 +33,7 @@ public class VehicleQuoteTests extends BaseTest {
 		assert(regoError.contains("Sorry, we can’t find this registration number"));
 		
 		Thread.sleep(2000);
-		*/
+		
 		
 		// 1990, Volvo, 240, body style, ...
 		// vehicleQuotePage.setSearchYear("1990");
