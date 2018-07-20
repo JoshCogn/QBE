@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="22119" started-at="2018-07-20T01:08:24Z" finished-at="2018-07-20T01:08:46Z">
+  <suite name="Default suite" duration-ms="21834" started-at="2018-07-20T05:24:01Z" finished-at="2018-07-20T05:24:23Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="22119" started-at="2018-07-20T01:08:24Z" finished-at="2018-07-20T01:08:46Z">
+    <test name="Default test" duration-ms="21834" started-at="2018-07-20T05:24:01Z" finished-at="2018-07-20T05:24:23Z">
       <class name="com.cognizant.qbe.SmokeTests.VehicleQuoteTests">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.cognizant.qbe.SmokeTests.VehicleQuoteTests@735b5592]" name="beforeMethod" is-config="true" duration-ms="9249" started-at="2018-07-20T11:08:24Z" finished-at="2018-07-20T11:08:33Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.cognizant.qbe.SmokeTests.VehicleQuoteTests@28feb3fa]" name="beforeMethod" is-config="true" duration-ms="10071" started-at="2018-07-20T15:24:01Z" finished-at="2018-07-20T15:24:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="fill_in_form()[pri:0, instance:com.cognizant.qbe.SmokeTests.VehicleQuoteTests@735b5592]" name="fill_in_form" duration-ms="12853" started-at="2018-07-20T11:08:33Z" finished-at="2018-07-20T11:08:46Z">
+        <test-method status="PASS" signature="fill_in_form_using_test_data()[pri:0, instance:com.cognizant.qbe.SmokeTests.VehicleQuoteTests@28feb3fa]" name="fill_in_form_using_test_data" duration-ms="11743" started-at="2018-07-20T15:24:11Z" finished-at="2018-07-20T15:24:23Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fill_in_form -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.cognizant.qbe.SmokeTests.VehicleQuoteTests@735b5592]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-20T11:08:46Z" finished-at="2018-07-20T11:08:46Z">
+        </test-method> <!-- fill_in_form_using_test_data -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.cognizant.qbe.SmokeTests.VehicleQuoteTests@28feb3fa]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-20T15:24:23Z" finished-at="2018-07-20T15:24:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->

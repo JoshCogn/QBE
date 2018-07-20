@@ -5,10 +5,64 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+import com.cognizant.qbe.ExcelUtility.ExcelUtility;
+import com.cognizant.qbe.ExcelUtility.TestData;
 import com.cognizant.qbe.Utilities.BaseTest;
 
 public class VehicleQuoteTests extends BaseTest {
 	@Test
+	public void fill_in_form_using_test_data() throws InterruptedException {
+		ExcelUtility.setExcelFileSheet("Sheet1");
+		ExcelUtility.initialiseColumnDictionary();
+		
+		int testCaseRowNumber = 1;
+		ExcelUtility.setRowNumber(testCaseRowNumber);
+		TestData testData = new TestData();
+		testData.initialise();
+		
+		
+		vehicleQuotePage.setPolicyStartDate(testData.policyStartDate);
+		vehicleQuotePage.setCoverOnBehalfOf(testData.personOrCompany);
+		
+		vehicleQuotePage.setHowToSearchForCar(testData.searchType);
+		vehicleQuotePage.setSearchYear(testData.searchYear);
+		vehicleQuotePage.setSearchMake(testData.searchMake);
+		vehicleQuotePage.setSearchModel(testData.searchModel);
+		vehicleQuotePage.setSearchBodyStyle(testData.searchBodyStyle);
+		vehicleQuotePage.setSearchEngineSize(testData.searchEngineSize);
+		vehicleQuotePage.setSearchCar(testData.searchCar);	
+		
+		vehicleQuotePage.setAddress(testData.address);
+		
+		vehicleQuotePage.setLocationParked(testData.locationParked);
+		vehicleQuotePage.setPrimaryCarUse(testData.primaryCarUse);
+		vehicleQuotePage.setCommercialType(testData.commericalType);
+		vehicleQuotePage.setIfManufacturerOptionsFitted(testData.isManufacturerOpitonsFitted);
+		vehicleQuotePage.selectManufacturerOptions(testData.manufacturerOpitonsFittedList);
+		
+		vehicleQuotePage.setIfModifiedSinceManufactured(testData.isModifiedSinceManufacturered);
+		vehicleQuotePage.selectModifications(testData.modifiedSinceManufactureredList);
+
+		vehicleQuotePage.setFinanceOnCar(testData.financeOnCar);
+		vehicleQuotePage.setWhoFinancedWith(testData.whoFinancedWith);
+		
+		vehicleQuotePage.setIfOriginalOwner(testData.originalOwner);
+		vehicleQuotePage.setIfBoughtInLastYear(testData.isBoughtInLastYear);
+		vehicleQuotePage.setCarCost(testData.carCost);
+		
+		vehicleQuotePage.setCarPreviousDamange(testData.carPreviousDamage);
+		vehicleQuotePage.setIfHavePriceEvidence(testData.writtenEvidence);
+		vehicleQuotePage.setSalvageValue(testData.salvageValue);
+		
+		vehicleQuotePage.setCarColour(testData.carColour);
+		
+		vehicleQuotePage.setEmailAddress(testData.emailAddress);
+		vehicleQuotePage.setPromoCode(testData.promoCode);
+		
+	}
+	
+	
+	//@Test
 	public void fill_in_form() throws InterruptedException {
 		
 		// I CHANGED THE START PAGE
@@ -55,8 +109,9 @@ public class VehicleQuoteTests extends BaseTest {
 		vehicleQuotePage.setSearchYear("2016");
 		vehicleQuotePage.setSearchMake("Honda");
 		vehicleQuotePage.setSearchModel("Civic");
+		vehicleQuotePage.setSearchBodyStyle("Sedan");
+		vehicleQuotePage.setSearchEngineSize("1798");
 		vehicleQuotePage.setSearchCar("9th Gen Ser II Vi Sedan 4dr Man 5sp 1.8i [MY15]");	
-		
 		
 		//Thread.sleep(2000);
 		

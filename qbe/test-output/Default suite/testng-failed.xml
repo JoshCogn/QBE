@@ -5,8 +5,8 @@
     <classes>
       <class name="com.cognizant.qbe.SmokeTests.VehicleQuoteTests">
         <methods>
+          <include name="fill_in_form_using_test_data"/>
           <include name="afterMethod"/>
-          <include name="fill_in_form"/>
           <include name="beforeMethod"/>
         </methods>
       </class> <!-- com.cognizant.qbe.SmokeTests.VehicleQuoteTests -->
