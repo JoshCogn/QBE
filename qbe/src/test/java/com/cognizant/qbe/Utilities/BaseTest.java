@@ -2,11 +2,13 @@ package com.cognizant.qbe.Utilities;
 
 import org.testng.annotations.Test;
 
+import com.cognizant.qbe.ExcelUtility.ExcelUtility;
 import com.cognizant.qbe.Pages.CarInsurancePage;
 import com.cognizant.qbe.Pages.HomePage;
 import com.cognizant.qbe.Pages.VehicleQuotePage;
 
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 
 import java.util.concurrent.TimeUnit;
 
@@ -19,6 +21,14 @@ public class BaseTest {
 	protected HomePage homePage;
 	protected CarInsurancePage carInsurancePage;
 	protected VehicleQuotePage vehicleQuotePage;
+	
+	@BeforeTest
+	public void beforeTest() {
+		ExcelUtility.setExcelFileSheet("Sheet1");
+		ExcelUtility.initialiseColumnDictionary();
+		System.out.println("Clear Status");
+		ExcelUtility.clearStatus();
+	}
 
 	@BeforeMethod
 	public void beforeMethod() {
@@ -33,6 +43,7 @@ public class BaseTest {
 		homePage = new HomePage(driver);
 		carInsurancePage = new CarInsurancePage(driver);
 		vehicleQuotePage = new VehicleQuotePage(driver);
+		
 	}
 
 	@AfterMethod

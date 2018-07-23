@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="QBE Form Tests">
+	<listeners>
+		<listener class-name="com.cognizant.qbe.Listeners.Listeners" />
+	</listeners>
+
+	<test name="Smoke Tests" preserve-order="true">
+		<classes>
+
+			<class name="com.cognizant.qbe.SmokeTests.VehicleQuoteTests">
+				 <methods> <include name="form_incorrect_cover_start_date"/> </methods> 
+			</class>
+<!--
+			<class name="smokeTests.ItemPageTests">
+			</class>
+
+			<class name="smokeTests.SearchBarTests">
+			</class>
+
+			<class name="smokeTests.CategoryMenuTests">
+			</class> 
+-->
+		</classes>
+	</test>
+
+</suite>

@@ -94,7 +94,11 @@ public class VehicleQuotePage extends BasePage {
 		WebElement streetAddress = driver.findElement(By.id("vehicleForm_aboutYourCar_address"));
 		streetAddress.sendKeys(address);
 		
-		streetAddress.findElement(By.xpath("following-sibling::ul/li[1]")).click();
+		WebDriverWait wait = new WebDriverWait(driver, 5);
+		WebElement firstChoice = wait.until(ExpectedConditions.visibilityOf(streetAddress.findElement(By.xpath("following-sibling::ul/li[1]"))));
+		firstChoice.click();
+		
+		//streetAddress.findElement(By.xpath("following-sibling::ul/li[1]")).click();
 		//streetAddress.sendKeys(Keys.ENTER);
 	}
 

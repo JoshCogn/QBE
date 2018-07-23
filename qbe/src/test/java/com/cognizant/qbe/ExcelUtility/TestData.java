@@ -36,7 +36,7 @@ public class TestData {
 	public String emailAddress;
 	public String promoCode;
 	
-	public void initialise() {
+	public TestData(){
 		
 		policyStartDate = ExcelUtility.getDataOfColumnLabel("Policy Start Date");
 		personOrCompany = ExcelUtility.getDataOfColumnLabel("Person Or Company");

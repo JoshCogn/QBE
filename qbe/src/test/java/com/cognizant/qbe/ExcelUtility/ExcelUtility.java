@@ -211,9 +211,25 @@ public class ExcelUtility {
 	}
 
 	public static String getDataOfColumnLabel(String label) {
-		System.out.println("label: " + label + ", col num: " + dict.get(label));
+		//System.out.println("label: " + label + ", col num: " + dict.get(label));
 		return getCellData(rowNumber,dict.get(label));	
 	}
+
+	public static void setTestCaseStatus(String string) {
+		//System.out.println("Setting col: "+ dict.get("Status") + " as " + string);
+		setCellData(string, rowNumber, dict.get("Status"));
+	}
+
+	public static void clearStatus() {
+		//HARD CODED
+		int statusColumn = dict.get("Status");
+		for (int i = 1; i < 5; i++) {
+			//System.out.println("clear row:" + i);
+			setCellData("", i, statusColumn);
+		}
+	}
+	
+	
 
 
 }
