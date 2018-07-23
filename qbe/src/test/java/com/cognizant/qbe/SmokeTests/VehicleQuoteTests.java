@@ -25,10 +25,6 @@ public class VehicleQuoteTests extends BaseTest {
 
 	@Test
 	public void form_incorrect_cover_start_date() throws InterruptedException {
-		int testCaseRowNumber = 3;
-		ExcelUtility.setRowNumber(testCaseRowNumber);
-		TestData testData = new TestData();
-
 		vehicleQuotePage.setPolicyStartDate("86");
 		vehicleQuotePage.setCoverOnBehalfOf(testData.personOrCompany);
 
@@ -44,10 +40,7 @@ public class VehicleQuoteTests extends BaseTest {
 	}
 
 	@Test
-	public void fill_in_form_incorrect_rego() {
-		int testCaseRowNumber = 2;
-		ExcelUtility.setRowNumber(testCaseRowNumber);
-		TestData testData = new TestData();
+	public void form_incorrect_rego() {
 
 		vehicleQuotePage.setPolicyStartDate(testData.policyStartDate);
 		vehicleQuotePage.setCoverOnBehalfOf(testData.personOrCompany);
@@ -67,11 +60,7 @@ public class VehicleQuoteTests extends BaseTest {
 	}
 
 	@Test
-	public void fill_in_form_total_using_test_data() throws InterruptedException {
-
-		int testCaseRowNumber = 1;
-		ExcelUtility.setRowNumber(testCaseRowNumber);
-		TestData testData = new TestData();
+	public void form_fill_total() throws InterruptedException {
 
 		vehicleQuotePage.setPolicyStartDate(testData.policyStartDate);
 		vehicleQuotePage.setCoverOnBehalfOf(testData.personOrCompany);

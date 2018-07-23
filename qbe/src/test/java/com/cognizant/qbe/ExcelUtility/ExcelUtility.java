@@ -228,6 +228,10 @@ public class ExcelUtility {
 			setCellData("", i, statusColumn);
 		}
 	}
+
+	public static void setRowToTestCase(String name) {
+		rowNumber = ExcelUtility.getRowNumberOfLabel(name, 0);
+	}
 	
 	
 

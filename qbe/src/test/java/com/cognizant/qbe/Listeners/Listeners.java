@@ -24,7 +24,7 @@ public class Listeners implements ITestListener{
 	}
 
 	public void onTestFailure(ITestResult arg0) {
-		System.out.println("Listener Failed called for: " + arg0.getTestName());
+		System.out.println("Listener Failed called for: " + arg0.getMethod().getMethodName());
 		ExcelUtility.setTestCaseStatus("Failed");		
 	}
 
@@ -39,7 +39,7 @@ public class Listeners implements ITestListener{
 	}
 
 	public void onTestSuccess(ITestResult arg0) {
-		System.out.println("Listener Success called for: " + arg0.getTestName());
+		System.out.println("Listener Success called for: " + arg0.getMethod().getMethodName());
 		ExcelUtility.setTestCaseStatus("Passed");
 	}
 
