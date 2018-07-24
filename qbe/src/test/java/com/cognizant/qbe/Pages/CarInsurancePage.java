@@ -4,10 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class CarInsurancePage extends BasePage{
-	WebDriver driver;
 	
 	public CarInsurancePage(WebDriver driver) {
-		this.driver = driver;
+		super(driver);
 	}
 	
 	public void clickGetAQuote() {

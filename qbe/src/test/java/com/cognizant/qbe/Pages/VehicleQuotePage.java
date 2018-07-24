@@ -8,11 +8,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.cognizant.qbe.CustomExpectedConditions.CustomExpectedConditions;
+
 public class VehicleQuotePage extends BasePage {
-	WebDriver driver;
 
 	public VehicleQuotePage(WebDriver driver) {
-		this.driver = driver;
+		super(driver);
 	}
 
 	public void setPolicyStartDate(String date) {
@@ -236,9 +237,11 @@ public class VehicleQuotePage extends BasePage {
 	public void setPromoCode(String code) {
 		driver.findElement(By.id("vehicleForm_tellUsABitMore_promotionalCode")).sendKeys(code);
 	}
-	
-	
 
+	public void clickNextButton() {
+		driver.findElement(By.xpath("//button[text()='Next']")).click();
+		
+	}
 
 
 }

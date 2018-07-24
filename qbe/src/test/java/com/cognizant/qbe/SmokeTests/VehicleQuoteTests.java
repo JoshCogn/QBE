@@ -9,19 +9,162 @@ import static org.hamcrest.MatcherAssert.assertThat;
 //import org.hamcrest.MatcherAssert.assertThat;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import com.cognizant.qbe.CustomExpectedConditions.CustomExpectedConditions;
 import com.cognizant.qbe.ExcelUtility.ExcelUtility;
 import com.cognizant.qbe.ExcelUtility.TestData;
 import com.cognizant.qbe.Utilities.BaseTest;
 
+
 public class VehicleQuoteTests extends BaseTest {
 
 	static final String RED = "(255, 0, 0";
+	
+	@Test
+	public void form_submitted_with_empty_fields() throws InterruptedException {
+		String test = "//label[contains(text(),'What\u2019s the full address where it\u2019s usually kept?')]";
+		System.out.println(test);
+		System.out.println(driver.findElement(By.xpath(test)).getText());
+		
+		WebElement tee = driver.findElement(By.xpath("//*[@id=\"vehicleForm_tellUsABitMore\"]/fieldset/div/h2"));
+		vehicleQuotePage.scrollToElement(tee);
+		vehicleQuotePage.waitUntilElementVisibleInPortView(tee);
+		
+		Thread.sleep(2000);
+		
+		WebElement nav = driver.findElement(By.xpath("//*[@id=\"main\"]/div/div/h1/span"));
+		vehicleQuotePage.scrollToElement(nav);
+		vehicleQuotePage.waitUntilElementVisibleInPortView(nav);
+
+		vehicleQuotePage.setPolicyStartDate("");
+
+		vehicleQuotePage.setHowToSearchForCar(testData.searchType);
+		vehicleQuotePage.setSearchYear(testData.searchYear);
+		vehicleQuotePage.setSearchMake(testData.searchMake);
+		vehicleQuotePage.setSearchModel(testData.searchModel);
+		vehicleQuotePage.setSearchBodyStyle(testData.searchBodyStyle);
+		vehicleQuotePage.setSearchEngineSize(testData.searchEngineSize);
+		vehicleQuotePage.setSearchCar(testData.searchCar);
+		
+		Thread.sleep(500);
+		
+		vehicleQuotePage.clickNextButton();
+		
+		boolean visible;
+		
+		WebElement validationSummary = driver.findElement(By.cssSelector("div.scfValidationSummary"));
+		vehicleQuotePage.waitUntilElementVisibleInPortView(validationSummary);
+		visible = vehicleQuotePage.isElementVisibleInPortView(validationSummary);
+		assertThat(visible, is(true));
+		
+		driver.findElement(By.xpath("//strong[text()='When would you want to start your cover?']")).click();
+		WebElement label = driver.findElement(By.cssSelector("label[for='vehicleForm_getStarted_policyStartDate']"));
+		vehicleQuotePage.waitUntilElementVisibleInPortView(label);
+		visible = vehicleQuotePage.isElementVisibleInPortView(label);
+		assertThat(visible, is(true));
+		
+		Thread.sleep(2000);
+		 nav = driver.findElement(By.xpath("//*[@id=\"main\"]/div/div/h1/span"));
+
+		vehicleQuotePage.scrollToElement(nav);
+		Thread.sleep(2000);
+		vehicleQuotePage.waitUntilElementVisibleInPortView(nav);
+
+
+		//driver.findElement(By.xpath("//strong[contains(text(),'s the full address where it')]")).click();
+		driver.findElement(By.xpath("//strong[contains(text(),'What\u2019s the full address where it\u2019s usually kept?')]")).click();
+
+		label = driver.findElement(By.cssSelector("div[field-key='address'] label"));
+		vehicleQuotePage.waitUntilElementVisibleInPortView(label);
+		visible = vehicleQuotePage.isElementVisibleInPortView(label);
+		assertThat(visible, is(true));
+		
+		String question = " the primary use of your car?";
+		vehicleQuotePage.scrollToElement(nav);
+		vehicleQuotePage.waitUntilElementVisibleInPortView(nav);
+		Thread.sleep(500);
+		
+		driver.findElement(By.xpath("//strong[contains(text(),' the primary use of your car?')]")).click();
+		label = driver.findElement(By.xpath("//label[contains(text(),'" + question + "')]"));
+		vehicleQuotePage.waitUntilElementVisibleInPortView(label);
+		visible = vehicleQuotePage.isElementVisibleInPortView(label);
+		assertThat(visible, is(true));
+		
+		
+		
+		
+		
+		
+		
+	}
+
+	@Test
+	public void form_scrolling() {
+		// WebElement optionsLabel =
+		// driver.findElement(By.cssSelector("div[field-key='modificationsOptions']
+		// label:first-child"));
+		WebElement bottomH2 = driver.findElement(By.xpath("//*[@id=\"main\"]/section/div/div/h2"));
+		WebElement topH1 = driver.findElement(By.xpath("//*[@id=\"main\"]/div/div/h1/span"));
+
+		System.out.println("h1 isDisplayed: " + topH1.isDisplayed());
+		System.out.println("h2 isDisplayed: " + bottomH2.isDisplayed());
+		Point point = bottomH2.getLocation();
+		System.out.println("x: " + point.x + ", y: " + point.y);
+		Point point1 = topH1.getLocation();
+		System.out.println("x: " + point1.x + ", y: " + point1.y);
+
+		Boolean visible = vehicleQuotePage.isElementVisibleInPortView(bottomH2);
+
+		System.out.println(visible);
+
+		visible = vehicleQuotePage.isElementVisibleInPortView(topH1);
+
+		System.out.println(visible);
+	}
+
+	@Test
+	public void form_car_cost_too_low() {
+		vehicleQuotePage.setPolicyStartDate(testData.policyStartDate);
+		vehicleQuotePage.setCoverOnBehalfOf(testData.personOrCompany);
+
+		vehicleQuotePage.setHowToSearchForCar(testData.searchType);
+		vehicleQuotePage.setSearchYear(testData.searchYear);
+		vehicleQuotePage.setSearchMake(testData.searchMake);
+		vehicleQuotePage.setSearchModel(testData.searchModel);
+		vehicleQuotePage.setSearchBodyStyle(testData.searchBodyStyle);
+		vehicleQuotePage.setSearchEngineSize(testData.searchEngineSize);
+		vehicleQuotePage.setSearchCar(testData.searchCar);
+
+		vehicleQuotePage.setAddress(testData.address);
+
+		vehicleQuotePage.setLocationParked(testData.locationParked);
+		vehicleQuotePage.setPrimaryCarUse(testData.primaryCarUse);
+		vehicleQuotePage.setCommercialType(testData.commericalType);
+		vehicleQuotePage.setIfManufacturerOptionsFitted(testData.isManufacturerOpitonsFitted);
+		vehicleQuotePage.selectManufacturerOptions(testData.manufacturerOpitonsFittedList);
+
+		vehicleQuotePage.setIfModifiedSinceManufactured(testData.isModifiedSinceManufacturered);
+		vehicleQuotePage.selectModifications(testData.modifiedSinceManufactureredList);
+
+		vehicleQuotePage.setFinanceOnCar(testData.financeOnCar);
+		vehicleQuotePage.setWhoFinancedWith(testData.whoFinancedWith);
+
+		vehicleQuotePage.setIfOriginalOwner(testData.originalOwner);
+		vehicleQuotePage.setIfBoughtInLastYear(testData.isBoughtInLastYear);
+		vehicleQuotePage.setCarCost(testData.carCost);
+
+		WebElement label = driver.findElement(By.cssSelector("label[for='vehicleForm_carDetails_carCost']"));
+		assertThat(label.getCssValue("color"), containsString(RED));
+	}
 
 	@Test
 	public void form_incorrect_cover_start_date() throws InterruptedException {
