@@ -10,9 +10,15 @@
 
 			<class name="com.cognizant.qbe.SmokeTests.VehicleQuoteTests">
 				<methods>
+					<!-- 
 					<include name="form_incorrect_cover_start_date" />
 					<include name="form_incorrect_rego" />
 					<include name="form_fill_total" />
+					<include name="form_car_cost_too_low" />  
+					<include name="form_scrolling" />
+					-->
+					<include name="form_submitted_with_empty_fields" />
+					
 				</methods>
 			</class>
 			<!-- <class name="smokeTests.ItemPageTests"> </class> <class name="smokeTests.SearchBarTests"> 

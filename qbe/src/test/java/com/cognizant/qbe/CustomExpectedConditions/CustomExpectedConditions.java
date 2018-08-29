@@ -1,5 +1,7 @@
 package com.cognizant.qbe.CustomExpectedConditions;
 
+import static org.hamcrest.Matchers.containsString;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -24,6 +26,16 @@ public class CustomExpectedConditions implements ExpectedCondition {
 						+ "return false;                            ",
 						element);
 				return (visible);
+			}
+		};
+	}
+	
+	public static ExpectedCondition<Boolean> elementColourIsEqual(final WebElement element, final String colour) {
+		return new ExpectedCondition<Boolean>() {
+			public Boolean apply(WebDriver driver) {
+				Boolean equals = element.getCssValue("color").contains(colour);
+				
+				return (equals);
 			}
 		};
 	}

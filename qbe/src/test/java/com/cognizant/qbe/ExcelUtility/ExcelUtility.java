@@ -221,9 +221,9 @@ public class ExcelUtility {
 	}
 
 	public static void clearStatus() {
-		//HARD CODED
+		int numOfRows = excelWSheet.getPhysicalNumberOfRows();
 		int statusColumn = dict.get("Status");
-		for (int i = 1; i < 5; i++) {
+		for (int i = 1; i < numOfRows; i++) {
 			//System.out.println("clear row:" + i);
 			setCellData("", i, statusColumn);
 		}

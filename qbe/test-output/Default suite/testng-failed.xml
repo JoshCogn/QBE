@@ -5,7 +5,10 @@
     <classes>
       <class name="com.cognizant.qbe.SmokeTests.VehicleQuoteTests">
         <methods>
-          <include name="fill_in_form_using_test_data"/>
+          <include name="form_car_cost_too_low"/>
+          <include name="form_fill_total"/>
+          <include name="form_submitted_with_empty_fields"/>
+          <include name="beforeTest"/>
           <include name="afterMethod"/>
           <include name="beforeMethod"/>
         </methods>

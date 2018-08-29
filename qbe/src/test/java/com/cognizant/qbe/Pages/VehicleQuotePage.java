@@ -82,7 +82,7 @@ public class VehicleQuotePage extends BasePage {
 		//// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='"+selectText+"']")));
 		// wait.until(ExpectedConditions.elementSelectionStateToBe(dropdown, true));
 
-		dropdown.findElement(By.xpath("//span[text()='" + selectText + "']")).click();
+		dropdown.findElement(By.xpath("./parent::div/following-sibling::div//span[text()='" + selectText + "']")).click();
 	}
 
 	public void setSearchCar(String selectCar) {
@@ -95,9 +95,11 @@ public class VehicleQuotePage extends BasePage {
 		WebElement streetAddress = driver.findElement(By.id("vehicleForm_aboutYourCar_address"));
 		streetAddress.sendKeys(address);
 		
+
 		WebDriverWait wait = new WebDriverWait(driver, 5);
 //		WebElement firstChoice = wait.until(ExpectedConditions.visibilityOf(streetAddress.findElement(By.xpath("/following-sibling::ul/li[1]"))));
-		WebElement firstChoice = wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//*[@id='vehicleForm_aboutYourCar_address']/following-sibling::ul/li[1]"))));
+		//WebElement firstChoice = wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//*[@id='vehicleForm_aboutYourCar_address']/following-sibling::ul/li[1]"))));
+		WebElement firstChoice = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='vehicleForm_aboutYourCar_address']/following-sibling::ul/li[1]/a")));
 		firstChoice.click();
 		
 		//streetAddress.findElement(By.xpath("following-sibling::ul/li[1]")).click();

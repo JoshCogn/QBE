@@ -2,24 +2,35 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="21834" started-at="2018-07-20T05:24:01Z" finished-at="2018-07-20T05:24:23Z">
+  <suite name="QBE Form Tests" duration-ms="24829" started-at="2018-08-29T01:47:19Z" finished-at="2018-08-29T01:47:44Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="21834" started-at="2018-07-20T05:24:01Z" finished-at="2018-07-20T05:24:23Z">
+    <test name="Smoke Tests" duration-ms="24829" started-at="2018-08-29T01:47:19Z" finished-at="2018-08-29T01:47:44Z">
       <class name="com.cognizant.qbe.SmokeTests.VehicleQuoteTests">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.cognizant.qbe.SmokeTests.VehicleQuoteTests@28feb3fa]" name="beforeMethod" is-config="true" duration-ms="10071" started-at="2018-07-20T15:24:01Z" finished-at="2018-07-20T15:24:11Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.cognizant.qbe.SmokeTests.VehicleQuoteTests@6767c1fc]" name="beforeTest" is-config="true" duration-ms="1821" started-at="2018-08-29T11:47:19Z" finished-at="2018-08-29T11:47:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.cognizant.qbe.SmokeTests.VehicleQuoteTests@6767c1fc]" name="beforeMethod" is-config="true" duration-ms="11708" started-at="2018-08-29T11:47:21Z" finished-at="2018-08-29T11:47:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.cognizant.qbe.SmokeTests.VehicleQuoteTests.form_submitted_with_empty_fields() throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="fill_in_form_using_test_data()[pri:0, instance:com.cognizant.qbe.SmokeTests.VehicleQuoteTests@28feb3fa]" name="fill_in_form_using_test_data" duration-ms="11743" started-at="2018-07-20T15:24:11Z" finished-at="2018-07-20T15:24:23Z">
+        <test-method status="PASS" signature="form_submitted_with_empty_fields()[pri:0, instance:com.cognizant.qbe.SmokeTests.VehicleQuoteTests@6767c1fc]" name="form_submitted_with_empty_fields" duration-ms="11208" started-at="2018-08-29T11:47:33Z" finished-at="2018-08-29T11:47:44Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fill_in_form_using_test_data -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.cognizant.qbe.SmokeTests.VehicleQuoteTests@28feb3fa]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-07-20T15:24:23Z" finished-at="2018-07-20T15:24:23Z">
+        </test-method> <!-- form_submitted_with_empty_fields -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.cognizant.qbe.SmokeTests.VehicleQuoteTests@6767c1fc]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-08-29T11:47:44Z" finished-at="2018-08-29T11:47:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
       </class> <!-- com.cognizant.qbe.SmokeTests.VehicleQuoteTests -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Smoke Tests -->
+  </suite> <!-- QBE Form Tests -->
 </testng-results>

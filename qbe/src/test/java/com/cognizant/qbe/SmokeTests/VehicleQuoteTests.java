@@ -31,19 +31,19 @@ public class VehicleQuoteTests extends BaseTest {
 	
 	@Test
 	public void form_submitted_with_empty_fields() throws InterruptedException {
-		String test = "//label[contains(text(),'What\u2019s the full address where it\u2019s usually kept?')]";
-		System.out.println(test);
-		System.out.println(driver.findElement(By.xpath(test)).getText());
-		
-		WebElement tee = driver.findElement(By.xpath("//*[@id=\"vehicleForm_tellUsABitMore\"]/fieldset/div/h2"));
-		vehicleQuotePage.scrollToElement(tee);
-		vehicleQuotePage.waitUntilElementVisibleInPortView(tee);
-		
-		Thread.sleep(2000);
-		
-		WebElement nav = driver.findElement(By.xpath("//*[@id=\"main\"]/div/div/h1/span"));
-		vehicleQuotePage.scrollToElement(nav);
-		vehicleQuotePage.waitUntilElementVisibleInPortView(nav);
+//		String test = "//label[contains(text(),'What\u2019s the full address where it\u2019s usually kept?')]";
+//		System.out.println(test);
+//		System.out.println(driver.findElement(By.xpath(test)).getText());
+//		
+//		WebElement tee = driver.findElement(By.xpath("//*[@id=\"vehicleForm_tellUsABitMore\"]/fieldset/div/h2"));
+//		vehicleQuotePage.scrollToElement(tee);
+//		vehicleQuotePage.waitUntilElementVisibleInPortView(tee);
+//		
+//		Thread.sleep(2000);
+//		
+//		WebElement nav = driver.findElement(By.xpath("//*[@id=\"main\"]/div/div/h1/span"));
+//		vehicleQuotePage.scrollToElement(nav);
+//		vehicleQuotePage.waitUntilElementVisibleInPortView(nav);
 
 		vehicleQuotePage.setPolicyStartDate("");
 
@@ -72,26 +72,27 @@ public class VehicleQuoteTests extends BaseTest {
 		visible = vehicleQuotePage.isElementVisibleInPortView(label);
 		assertThat(visible, is(true));
 		
-		Thread.sleep(2000);
-		 nav = driver.findElement(By.xpath("//*[@id=\"main\"]/div/div/h1/span"));
-
-		vehicleQuotePage.scrollToElement(nav);
-		Thread.sleep(2000);
-		vehicleQuotePage.waitUntilElementVisibleInPortView(nav);
+		Thread.sleep(1000);
+//		WebElement nav = driver.findElement(By.xpath("//*[@id=\"main\"]/div/div/h1/span"));
+//
+//		vehicleQuotePage.scrollToElement(nav);
+//		Thread.sleep(2000);
+//		vehicleQuotePage.waitUntilElementVisibleInPortView(nav);
 
 
 		//driver.findElement(By.xpath("//strong[contains(text(),'s the full address where it')]")).click();
 		driver.findElement(By.xpath("//strong[contains(text(),'What\u2019s the full address where it\u2019s usually kept?')]")).click();
-
+		//Thread.sleep(1000);
+		
 		label = driver.findElement(By.cssSelector("div[field-key='address'] label"));
 		vehicleQuotePage.waitUntilElementVisibleInPortView(label);
 		visible = vehicleQuotePage.isElementVisibleInPortView(label);
 		assertThat(visible, is(true));
 		
 		String question = " the primary use of your car?";
-		vehicleQuotePage.scrollToElement(nav);
-		vehicleQuotePage.waitUntilElementVisibleInPortView(nav);
-		Thread.sleep(500);
+//		vehicleQuotePage.scrollToElement(nav);
+//		vehicleQuotePage.waitUntilElementVisibleInPortView(nav);
+		Thread.sleep(1000);
 		
 		driver.findElement(By.xpath("//strong[contains(text(),' the primary use of your car?')]")).click();
 		label = driver.findElement(By.xpath("//label[contains(text(),'" + question + "')]"));
@@ -99,11 +100,12 @@ public class VehicleQuoteTests extends BaseTest {
 		visible = vehicleQuotePage.isElementVisibleInPortView(label);
 		assertThat(visible, is(true));
 		
-		
-		
-		
-		
-		
+		question = "What colour is the car?";
+		driver.findElement(By.xpath("//strong[contains(text(),'" + question + "')]")).click();
+		label = driver.findElement(By.xpath("//label[contains(text(),'" + question + "')]"));
+		vehicleQuotePage.waitUntilElementVisibleInPortView(label);
+		visible = vehicleQuotePage.isElementVisibleInPortView(label);
+		assertThat(visible, is(true));
 		
 	}
 
@@ -161,9 +163,12 @@ public class VehicleQuoteTests extends BaseTest {
 		vehicleQuotePage.setIfOriginalOwner(testData.originalOwner);
 		vehicleQuotePage.setIfBoughtInLastYear(testData.isBoughtInLastYear);
 		vehicleQuotePage.setCarCost(testData.carCost);
-
+		
 		WebElement label = driver.findElement(By.cssSelector("label[for='vehicleForm_carDetails_carCost']"));
+		WebDriverWait wait = new WebDriverWait(driver, 5);
+		wait.until(CustomExpectedConditions.elementColourIsEqual(label, RED));
 		assertThat(label.getCssValue("color"), containsString(RED));
+		
 	}
 
 	@Test
