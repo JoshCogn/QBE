@@ -1,5 +1,7 @@
 package com.cognizant.qbe;
 
+// ignore this line
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
