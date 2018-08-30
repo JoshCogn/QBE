@@ -10,7 +10,7 @@ import com.cognizant.qbe.CustomExpectedConditions.CustomExpectedConditions;
 
 public class BasePage {
 
-	WebDriver driver;
+	static WebDriver driver;
 
 	public BasePage(WebDriver driver) {
 		this.driver = driver;

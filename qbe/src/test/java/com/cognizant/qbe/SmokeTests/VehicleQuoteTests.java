@@ -22,6 +22,7 @@ import org.testng.annotations.Test;
 import com.cognizant.qbe.CustomExpectedConditions.CustomExpectedConditions;
 import com.cognizant.qbe.ExcelUtility.ExcelUtility;
 import com.cognizant.qbe.ExcelUtility.TestData;
+import com.cognizant.qbe.Pages.VehicleQuotePage;
 import com.cognizant.qbe.Utilities.BaseTest;
 
 
@@ -31,19 +32,6 @@ public class VehicleQuoteTests extends BaseTest {
 	
 	@Test
 	public void form_submitted_with_empty_fields() throws InterruptedException {
-//		String test = "//label[contains(text(),'What\u2019s the full address where it\u2019s usually kept?')]";
-//		System.out.println(test);
-//		System.out.println(driver.findElement(By.xpath(test)).getText());
-//		
-//		WebElement tee = driver.findElement(By.xpath("//*[@id=\"vehicleForm_tellUsABitMore\"]/fieldset/div/h2"));
-//		vehicleQuotePage.scrollToElement(tee);
-//		vehicleQuotePage.waitUntilElementVisibleInPortView(tee);
-//		
-//		Thread.sleep(2000);
-//		
-//		WebElement nav = driver.findElement(By.xpath("//*[@id=\"main\"]/div/div/h1/span"));
-//		vehicleQuotePage.scrollToElement(nav);
-//		vehicleQuotePage.waitUntilElementVisibleInPortView(nav);
 
 		vehicleQuotePage.setPolicyStartDate("");
 
@@ -89,11 +77,9 @@ public class VehicleQuoteTests extends BaseTest {
 		visible = vehicleQuotePage.isElementVisibleInPortView(label);
 		assertThat(visible, is(true));
 		
-		String question = " the primary use of your car?";
-//		vehicleQuotePage.scrollToElement(nav);
-//		vehicleQuotePage.waitUntilElementVisibleInPortView(nav);
 		Thread.sleep(1000);
 		
+		String question = " the primary use of your car?";
 		driver.findElement(By.xpath("//strong[contains(text(),' the primary use of your car?')]")).click();
 		label = driver.findElement(By.xpath("//label[contains(text(),'" + question + "')]"));
 		vehicleQuotePage.waitUntilElementVisibleInPortView(label);
@@ -106,6 +92,7 @@ public class VehicleQuoteTests extends BaseTest {
 		vehicleQuotePage.waitUntilElementVisibleInPortView(label);
 		visible = vehicleQuotePage.isElementVisibleInPortView(label);
 		assertThat(visible, is(true));
+		
 		
 	}
 
