@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-QBE_Form_Tests">
-              <span class="suite-name border-failed">QBE Form Tests</span>
+              <span class="suite-name border-passed">QBE Form Tests</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -90,21 +90,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-QBE_Form_Tests" class="hide-methods failed suite-QBE_Form_Tests"> (hide)</a> <!-- hide-methods failed suite-QBE_Form_Tests -->
-                      <a href="#" panel-name="suite-QBE_Form_Tests" class="show-methods failed suite-QBE_Form_Tests"> (show)</a> <!-- show-methods failed suite-QBE_Form_Tests -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-QBE_Form_Tests" class="hide-methods passed suite-QBE_Form_Tests"> (hide)</a> <!-- hide-methods passed suite-QBE_Form_Tests -->
+                      <a href="#" panel-name="suite-QBE_Form_Tests" class="show-methods passed suite-QBE_Form_Tests"> (show)</a> <!-- show-methods passed suite-QBE_Form_Tests -->
                     </span>
-                    <div class="method-list-content failed suite-QBE_Form_Tests">
+                    <div class="method-list-content passed suite-QBE_Form_Tests">
                       <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-QBE_Form_Tests" title="com.cognizant.qbe.SmokeTests.VehicleQuoteTests" hash-for-method="form_submitted_with_empty_fields">form_submitted_with_empty_fields</a> <!-- method navigator-link -->
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-QBE_Form_Tests" title="com.cognizant.qbe.SmokeTests.VehicleQuoteTests" hash-for-method="form_fill_total">form_fill_total</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-QBE_Form_Tests -->
+                    </div> <!-- method-list-content passed suite-QBE_Form_Tests -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -116,59 +116,21 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-QBE_Form_Tests" class="panel QBE_Form_Tests">
-          <div class="suite-QBE_Form_Tests-class-failed">
+          <div class="suite-QBE_Form_Tests-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="passed.png"/>
               <span class="class-name">com.cognizant.qbe.SmokeTests.VehicleQuoteTests</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="form_submitted_with_empty_fields">
-                  </a> <!-- form_submitted_with_empty_fields -->
-                  <span class="method-name">form_submitted_with_empty_fields</span>
-                  <div class="stack-trace"><b>"java.lang.AssertionError: 
-Expected: is &lt;true&gt;
-     but: was &lt;false&gt;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:8)
-	at com.cognizant.qbe.SmokeTests.VehicleQuoteTests.form_submitted_with_empty_fields(VehicleQuoteTests.java:92)
-... Removed 24 stack frames<br/> java.lang.AssertionError: 
-Expected: is &lt;true&gt;
-     but: was &lt;false&gt;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:8)
-	at com.cognizant.qbe.SmokeTests.VehicleQuoteTests.form_submitted_with_empty_fields(VehicleQuoteTests.java:92)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-"</b><br>org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)<br>org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:8)<br>com.cognizant.qbe.SmokeTests.VehicleQuoteTests.form_submitted_with_empty_fields(VehicleQuoteTests.java:92)<br>sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br>sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br>java.lang.reflect.Method.invoke(Method.java:498)<br>org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)<br>org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br>org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br>org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br>org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br>org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br>org.testng.TestRunner.privateRun(TestRunner.java:767)<br>org.testng.TestRunner.run(TestRunner.java:617)<br>org.testng.SuiteRunner.runTest(SuiteRunner.java:334)<br>org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)<br>org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)<br>org.testng.SuiteRunner.run(SuiteRunner.java:240)<br>org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br>org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br>org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)<br>org.testng.TestNG.runSuitesLocally(TestNG.java:1123)<br>org.testng.TestNG.run(TestNG.java:1031)<br>org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)<br>org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br>org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br>
-</div> <!-- stack-trace -->
+                  <a name="form_fill_total">
+                  </a> <!-- form_fill_total -->
+                  <span class="method-name">form_fill_total</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-QBE_Form_Tests-class-failed -->
+          </div> <!-- suite-QBE_Form_Tests-class-passed -->
         </div> <!-- panel QBE_Form_Tests -->
         <div panel-name="test-xml-QBE_Form_Tests" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -186,7 +148,7 @@ Expected: is &lt;true&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.cognizant.qbe.SmokeTests.VehicleQuoteTests&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;form_submitted_with_empty_fields&quot;/&gt;
+          &lt;include name=&quot;form_fill_total&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- com.cognizant.qbe.SmokeTests.VehicleQuoteTests --&gt;
     &lt;/classes&gt;
@@ -230,14 +192,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'form_submitted_with_empty_fields')
+data.setCell(0, 1, 'form_fill_total')
 data.setCell(0, 2, 'com.cognizant.qbe.SmokeTests.VehicleQuoteTests')
-data.setCell(0, 3, 8846);
+data.setCell(0, 3, 7700);
 window.suiteTableData['QBE_Form_Tests']= { tableData: data, tableDiv: 'times-div-QBE_Form_Tests'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 8 seconds</span>
+              <span class="suite-total-time">Total running time: 7 seconds</span>
               <div id="times-div-QBE_Form_Tests">
               </div> <!-- times-div-QBE_Form_Tests -->
             </div> <!-- times-div -->
@@ -262,11 +224,11 @@ return data;
                 <br/>
                 <span class="ignored-method-name">form_scrolling</span>
                 <br/>
-                <span class="ignored-method-name">form_fill_total</span>
-                <br/>
-                <span class="ignored-method-name">form_incorrect_rego</span>
+                <span class="ignored-method-name">form_submitted_with_empty_fields</span>
                 <br/>
                 <span class="ignored-method-name">form_incorrect_cover_start_date</span>
+                <br/>
+                <span class="ignored-method-name">form_incorrect_rego</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -284,18 +246,16 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-method before">
-                <span class="method-name">beforeMethod(public void com.cognizant.qbe.SmokeTests.VehicleQuoteTests.form_submitted_with_empty_fields() throws...)</span>
-                <span class="method-start">1476 ms</span>
+                <span class="method-name">beforeMethod(public void com.cognizant.qbe.SmokeTests.VehicleQuoteTests.form_fill_total() throws java.lang.Interr...)</span>
+                <span class="method-start">1259 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">form_submitted_with_empty_fields</span>
-                <span class="method-start">14603 ms</span>
+                <span class="method-name">form_fill_total</span>
+                <span class="method-start">19206 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">23534 ms</span>
+                <span class="method-start">27000 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
