@@ -11,6 +11,7 @@ import com.cognizant.qbe.Pages.VehicleQuotePage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
+import java.io.File;
 import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
 
@@ -49,8 +50,11 @@ public class BaseTest {
 					"C:\\Users\\695136\\Software\\chromedriver_win32\\chromedriver.exe");
 			driver = new ChromeDriver();
 		} else {
+			//  C:\Users\695136\AppData\Local\Mozilla Firefox\firefox.exe
 			System.setProperty("webdriver.gecko.driver",
 					"C:\\Users\\695136\\Software\\geckodriver-win32\\geckodriver.exe");
+			File firefoxPathBinary = new File("C:\\Users\\695136\\AppData\\Local\\Mozilla Firefox\\firefox.exe");
+			System.setProperty("webdriver.firefox.bin", firefoxPathBinary.getAbsolutePath());
 			driver = new FirefoxDriver();
 		}
 
