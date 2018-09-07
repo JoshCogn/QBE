@@ -197,6 +197,8 @@ public class VehicleQuoteTests extends BaseTest {
 	@Test
 	public void form_fill_total() throws InterruptedException {
 
+		Thread.sleep(10000);
+		
 		vehicleQuotePage.setPolicyStartDate(testData.policyStartDate);
 		vehicleQuotePage.setCoverOnBehalfOf(testData.personOrCompany);
 

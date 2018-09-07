@@ -16,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 
 public class BaseTest {
@@ -24,7 +25,7 @@ public class BaseTest {
 	protected CarInsurancePage carInsurancePage;
 	protected VehicleQuotePage vehicleQuotePage;
 	protected TestData testData;
-	
+
 	@BeforeTest
 	public void beforeTest() {
 		ExcelUtility.setExcelFileSheet("Sheet1");
@@ -35,28 +36,43 @@ public class BaseTest {
 
 	@BeforeMethod
 	public void beforeMethod(Method method) {
-		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\695136\\Software\\chromedriver_win32\\chromedriver.exe");
-		driver = new ChromeDriver();
+
+		String browser = System.getProperty("browser");
+
+		if (browser == null) {
+			System.setProperty("webdriver.chrome.driver",
+					"C:\\Users\\695136\\Software\\chromedriver_win32\\chromedriver.exe");
+			driver = new ChromeDriver();
+		} else if (browser.equalsIgnoreCase("Chrome")) {
+
+			System.setProperty("webdriver.chrome.driver",
+					"C:\\Users\\695136\\Software\\chromedriver_win32\\chromedriver.exe");
+			driver = new ChromeDriver();
+		} else {
+			System.setProperty("webdriver.gecko.driver",
+					"C:\\Users\\695136\\Software\\geckodriver-win32\\geckodriver.exe");
+			driver = new FirefoxDriver();
+		}
+
 		driver.get("https://www.qbe.com.au/insurance/vehicle/vehicle");
-		
+
 		// driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		// driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-		
+
 		homePage = new HomePage(driver);
 		carInsurancePage = new CarInsurancePage(driver);
 		vehicleQuotePage = new VehicleQuotePage(driver);
-		
-		//get the test name
+
+		// get the test name
 		ExcelUtility.setRowToTestCase(method.getName());
 		testData = new TestData();
-		
+
 	}
 
 	@AfterMethod
 	public void afterMethod() {
-//		driver.quit();
+		// driver.quit();
 	}
 
 }
