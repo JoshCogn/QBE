@@ -2,6 +2,7 @@ package com.cognizant.qbe.SmokeTests;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
+
 //import static org.junit.matchers.JUnitMatchers.*;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.Matchers.containsString;
@@ -9,7 +10,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 //import org.hamcrest.MatcherAssert.assertThat;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -193,11 +193,21 @@ public class VehicleQuoteTests extends BaseTest {
 		assertThat(colour, containsString(RED));
 
 	}
+	
+	@Test
+	public void headless_test() {
+		String title = driver.getTitle();
+		System.out.println(title);
+		assertEquals(title, "Vehicle");
+		vehicleQuotePage.setPolicyStartDate("1");
+		
+	}
+	
 
 	@Test
 	public void form_fill_total() throws InterruptedException {
 
-		Thread.sleep(10000);
+		Thread.sleep(1000);
 		
 		vehicleQuotePage.setPolicyStartDate(testData.policyStartDate);
 		vehicleQuotePage.setCoverOnBehalfOf(testData.personOrCompany);

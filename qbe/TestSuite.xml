@@ -16,8 +16,12 @@
 					<include name="form_submitted_with_empty_fields" />
 					<include name="form_car_cost_too_low" />  
 					<include name="form_scrolling" />
+					<include name="form_fill_total" />
+					
 					-->
 					<include name="form_fill_total" />
+					
+					<include name="headless_test" />
 					
 				</methods>
 			</class>

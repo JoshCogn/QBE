@@ -18,6 +18,10 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriverService;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 
 public class BaseTest {
@@ -26,6 +30,7 @@ public class BaseTest {
 	protected CarInsurancePage carInsurancePage;
 	protected VehicleQuotePage vehicleQuotePage;
 	protected TestData testData;
+	protected String browser;
 
 	@BeforeTest
 	public void beforeTest() {
@@ -38,8 +43,8 @@ public class BaseTest {
 	@BeforeMethod
 	public void beforeMethod(Method method) {
 
-		String browser = System.getProperty("browser");
-
+		browser = System.getProperty("browser");
+		System.out.println("Browser :" + browser);
 		if (browser == null) {
 			System.setProperty("webdriver.chrome.driver",
 					"C:\\Users\\695136\\Software\\chromedriver_win32\\chromedriver.exe");
@@ -49,6 +54,15 @@ public class BaseTest {
 			System.setProperty("webdriver.chrome.driver",
 					"C:\\Users\\695136\\Software\\chromedriver_win32\\chromedriver.exe");
 			driver = new ChromeDriver();
+		} else if (browser.equalsIgnoreCase("PhantomJS")) {
+			DesiredCapabilities caps = new DesiredCapabilities();
+			caps.setJavascriptEnabled(true);                
+			caps.setCapability("takesScreenshot", true);  
+			caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY,
+			                        "C:\\Users\\695136\\PhantomJS\\bin\\phantomjs.exe");
+            driver = new PhantomJSDriver(caps);	
+		} else if (browser.equalsIgnoreCase("HTMLUnit")) {
+			driver = new HtmlUnitDriver(true);
 		} else {
 			//  C:\Users\695136\AppData\Local\Mozilla Firefox\firefox.exe
 			System.setProperty("webdriver.gecko.driver",
@@ -56,6 +70,7 @@ public class BaseTest {
 			File firefoxPathBinary = new File("C:\\Users\\695136\\AppData\\Local\\Mozilla Firefox\\firefox.exe");
 			System.setProperty("webdriver.firefox.bin", firefoxPathBinary.getAbsolutePath());
 			driver = new FirefoxDriver();
+			browser = "Firefox";
 		}
 
 		driver.get("https://www.qbe.com.au/insurance/vehicle/vehicle");
@@ -63,6 +78,8 @@ public class BaseTest {
 		// driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		// driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+		
+		System.out.println("got webpage");
 
 		homePage = new HomePage(driver);
 		carInsurancePage = new CarInsurancePage(driver);
@@ -71,12 +88,20 @@ public class BaseTest {
 		// get the test name
 		ExcelUtility.setRowToTestCase(method.getName());
 		testData = new TestData();
-
+		
 	}
 
 	@AfterMethod
 	public void afterMethod() {
 		// driver.quit();
+	}
+
+	public WebDriver getDriver() {
+		return driver;
+	}
+	
+	public String getBrowser() {
+		return browser;
 	}
 
 }
