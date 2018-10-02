@@ -93,7 +93,6 @@ public class VehicleQuoteTests extends BaseTest {
 		visible = vehicleQuotePage.isElementVisibleInPortView(label);
 		assertThat(visible, is(true));
 		
-		
 	}
 
 	@Test
